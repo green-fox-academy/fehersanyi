@@ -1,6 +1,7 @@
 'use strict';
 // coding hours
-
+// with + between variables in a log you can chain them together, but you always have to have a space between them.
+// you can use math characters even when you type the name of the variable.
 let codinHours: number = 6;
 let numbOfWeeks: number = 17;
 let codinDays: number =5;

@@ -3,6 +3,8 @@ let a: number = 24;
 let out: number = 0;
 //ha a paros, csokkentsd out-ot egyel
 // if a is even increment out by one
+
+// if statements can be used to check the parameters of different variables and if they check then make it do something. or else if something else is happening :)
 if (a % 2 === 0)
 out = out - 1;
 console.log(out);

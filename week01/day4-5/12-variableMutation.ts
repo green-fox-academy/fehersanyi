@@ -1,6 +1,6 @@
 'use strict';
 // variable mutations
-
+// there are logical characters like not '!' and '&&' and or '||' zou can negate each of them wit the not character.
 let a: number = 3;
 // make it bigger by 10
 console.log(a + 10);
