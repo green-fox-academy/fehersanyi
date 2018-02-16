@@ -1,3 +1,4 @@
+'use strict';
 // coding hours
 
 let codinHours: number = 6;

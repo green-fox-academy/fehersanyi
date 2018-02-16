@@ -1,3 +1,4 @@
+'use strict';
 let a: number = 24;
 let out: number = 0;
 //ha a paros, csokkentsd out-ot egyel

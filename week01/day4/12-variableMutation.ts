@@ -1,3 +1,4 @@
+'use strict';
 // variable mutations
 
 let a: number = 3;

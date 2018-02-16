@@ -1,3 +1,4 @@
+'use strict';
 // include zourself
 console.log('Feher Sanyi');
 console.log(27);

@@ -1,3 +1,4 @@
+'use strict';
 //humpy dumpy
 console.log('Humpty Dumpty sat on a wall,');
 console.log('Humpy Dumy had a great fall.');

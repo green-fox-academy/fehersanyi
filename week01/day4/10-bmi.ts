@@ -1,3 +1,4 @@
+'use strict';
 // bmi
 
 let massInKg: number = 81.2;

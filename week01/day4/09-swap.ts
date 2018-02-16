@@ -1,3 +1,4 @@
+'use strict';
 // swap numbers
 
 let a: number = 123;

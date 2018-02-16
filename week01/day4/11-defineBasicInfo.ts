@@ -1,3 +1,4 @@
+'use strict';
 // define basic info
 
 let myName: string = 'Sanyi';

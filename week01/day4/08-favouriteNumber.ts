@@ -1,3 +1,4 @@
+'use strict';
 // favourite number
 
 let favouriteNumber: number = 8

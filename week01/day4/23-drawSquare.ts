@@ -1,17 +1,18 @@
 'use strict';
+// lineacount a mertek, i az oszlop, j a sor.
 let lineCount: number = 6;
-for (let i: number = 0; i < lineCount; i++) {
-    console.log("*");
-}
-console.log();
-for (let i: number = 0; i < lineCount - 2; i++) {
-    console.log("*");
-    for (let j: number = 0; j < lineCount - 2; j++) {
-        console.log(" ");
+// oszlop loop
+for (let i: number = 1; i <= lineCount; i++) {
+    // sor loop
+    let star: string = '';
+    for (let j: number = 1; j <= lineCount; j++) {
+        // melyik sorba hova
+        if (i === 1 || i === lineCount || j === 1 || j === lineCount){
+            star += '%';
+        }
+        else {
+            
+        }
     }
-    console.log("*");
+    console.log(star);
 }
-for (let i: number = 0; i < lineCount; i++) {
-    console.log("*");
-}
-console.log();
