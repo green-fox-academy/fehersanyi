@@ -1,6 +1,6 @@
 'use strict';
 // here linecount is a variable that will determine how many rows will the drawing go.
-let lineCount: number = 4;
+
 
 // Write a program that draws a triangle like this:
 //
@@ -17,9 +17,10 @@ will create as many as we prefixed in linecount.
 j stands for rows, in this example it will be always one more than i (the columns).
 star represent an empty variable witch will change as the condicions change we set.
 */
-for (let i: number = 1; i <= lineCount; i++) {
+let lineCount: number = 4;
+for (let column: number = 1; column <= lineCount; column++) {
         let star: string = "";
-    for (let j: number = 1; j <= i; j++) {
+    for (let row: number = 1; row <= column; row++) {
         star = star + '*';
     }
 console.log(star);

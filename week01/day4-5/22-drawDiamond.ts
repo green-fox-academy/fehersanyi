@@ -35,4 +35,4 @@ for(let i: number = lineCount-1; i >= 1; i--) {
             star += "*";
         }
         console.log(star);  
-} 
+}   
