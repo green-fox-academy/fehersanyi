@@ -1,5 +1,9 @@
 'use strict'
-function printer(input: string, input2: string = ''){
-    console.log(input + ' ' + input2);
+function printer(input: string, input2?: string){
+    if (input2 != undefined){
+        return input + ' ' + input2;
+    } else {
+        return input
+    }
 }
-printer('hello');
+console.log(printer('hello', 'papika'));
