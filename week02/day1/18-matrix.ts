@@ -1,9 +1,10 @@
 'use strict';
 let matrix: any [] = [];
-for(let i = 0; i <= 3; i++) {
+let sizeOf = 11;
+for(let i = 0; i <= sizeOf; i++) {
     matrix[i] = [];
-    for (let j = 0; j <= 3; j++){
-        if (i + j === 3){
+    for (let j = 0; j <= sizeOf; j++){
+        if (i + j === sizeOf){
             matrix[i][j] = 1;
         } else {
             matrix[i][j] = 0;
