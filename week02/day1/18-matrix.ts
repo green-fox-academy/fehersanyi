@@ -13,4 +13,3 @@ for(let i = 0; i <= sizeOf; i++) {
     
     console.log(matrix[i].join(' '));
 }
-

@@ -13,3 +13,29 @@ let students: any[] = [
 // - how many candies are owned by students
 // create a function that takes a list of students and logs:
 // - Sum of the age of people who have lass than 5 candies
+
+function candies (inPut: any[]) {
+    let allCandy: number = 0;
+    for (let i: number = 0; i < inPut.length; i++) {
+        allCandy += inPut[i].candies   
+    }
+    console.log('The students own ' + allCandy + ' cadies together.');
+}
+candies(students);
+
+function ownedCandies (src: any[]) {
+    for (let j: number = 0; j < src.length; j++) {
+        console.log(src[j].name, 'owns ',  src[j].candies);
+    }
+}
+ownedCandies(students);
+
+function sumOfAges (nyerk: any[]) {
+    let ages: number = 0    
+    for (let k: number = 0; k < nyerk.length; k++) {
+        if (nyerk[k].candies < 5)
+        ages += nyerk[k].age;
+    }
+    console.log('the sum of the ages of loosers are ' + ages);
+}
+sumOfAges(students);
