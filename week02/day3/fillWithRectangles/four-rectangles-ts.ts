@@ -6,15 +6,16 @@ const ctx = canvas.getContext('2d');
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 // Draw four different size and color rectangles.
 // Avoid code duplication.
-
-ctx.fillStyle = "blue";
-ctx.fillRect(300, 40, 50, 20);
-
-ctx.fillStyle = "green";
-ctx.fillRect(500, 10, 69, 69);
-
-ctx.fillStyle = "red";
-ctx.fillRect(295, 195, 10, 10);
-
-ctx.fillStyle = "purple";
-ctx.fillRect(222, 44, 100, 100);
+let hor: number = 0;
+let ver: number = 0;
+let h: number = 0;
+let w: number = 0;
+let c: string[] = ['blue', 'green', 'red', 'purple']
+for (let i: number = 0; i < 4; i++) {
+    hor = hor * i + 10;
+    ver = ver * i + 10;
+    h = h * i + 10;
+    w = w * i + 10;
+    ctx.fillStyle = c[i];
+ctx.fillRect(hor, ver, h, w);
+}
