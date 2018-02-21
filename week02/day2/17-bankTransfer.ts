@@ -32,7 +32,7 @@ function getNameAndBalance (nab: any[]) {
 }
 getNameAndBalance(accounts);
 
-function transferAmount (tam: any[], fan: number, tan: number, act: number) {
+function transferAmount (tam: any[], fan: number[], tan: number[], act: number) {
     let cloudOfMoney: number = 0;
     if (fan || tan !== accounts[1].account_number || accounts[2].account_number || accounts[3].account_number) {
         console.log('404 - account not found');
