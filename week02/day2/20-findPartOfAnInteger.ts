@@ -8,7 +8,31 @@ console.log(subint(1, [1, 11, 34, 52, 61]));
 console.log(subint(9, [1, 11, 34, 52, 61]));
 // should print: '[]'
 function subint (myNumber: number, myListOfNumbers: number []) {
+//  myListOfNumbers.toString
+
+  let letThereBeLight = [];
+  for(let i: number = 0; i < myListOfNumbers.length; i++) {
+    if(myListOfNumbers[i].toString().indexOf(myNumber.toString()) !== -1) {
+       letThereBeLight.push(i);
+    }
+  }
+  return letThereBeLight;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*
+  let thereBeLight: number[];
   myListOfNumbers = myListOfNumbers.filter(item => myNumber === item % 10 || myNumber === item % 100);
   
   return myListOfNumbers;
     }
+    */
