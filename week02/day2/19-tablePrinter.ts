@@ -30,8 +30,25 @@ function ingredientList(inPut: any[]) {
     console.log('| Ingredient         | Needs cooling | In stock |');
     console.log('+--------------------+---------------+----------+');
     for(let i: number = 0; i < ingredients.length; i++) {
-    //console.log(ingredients[i].name.length);
-    // let tabs: string = ' '.repeat(20 - ingredients[i].name.length);    
+        let tabs: string = ' ';
+        let tabs2: string = ' ';
+        let tabs3: string = ' ';
+        for(let j: number = 0; j < 18 - ingredients[i].name.length; j++) {
+            tabs += ' ';
+        }
+        if(ingredients[i].needs_cooling === true) {             
+          for(let j: number = 0; j < 10; j++) {
+            tabs2 += ' ';
+          }
+        } else {
+            for(let j: number = 0; j < 11; j++) {
+              tabs2 += ' ';
+            }
+          }
+        for(let j: number = 0; j < 7; j++) {
+          tabs3 += ' ';
+        }
+
         if(ingredients[i].needs_cooling == true) {
             ingredients[i].needs_cooling = 'yes';
         } else {
@@ -40,7 +57,7 @@ function ingredientList(inPut: any[]) {
         if(ingredients[i].in_stock == 0) {
             ingredients[i].in_stock = '-';
         }
-        console.log('| ' + ingredients[i].name  + '| ' + ingredients[i].needs_cooling + '| ' + ingredients[i].in_stock + ' |');
+        console.log('| ' + ingredients[i].name  + tabs + '| ' + ingredients[i].needs_cooling + tabs2 +  '| ' + ingredients[i].in_stock + tabs3 + '|');
     }
     
     console.log('+--------------------+---------------+----------+');
