@@ -30,24 +30,36 @@ function getNameAndBalance (nab: any[]) {
         console.log(nab[i].client_name, ', ', nab[i].balance);
     }
 }
-getNameAndBalance(accounts);
+//getNameAndBalance(accounts);
 
-function transferAmount (tam: any[], fan: number[], tan: number[], act: number) {
-    let cloudOfMoney: number = 0;
-    if (fan || tan !== accounts[1].account_number || accounts[2].account_number || accounts[3].account_number) {
-        console.log('404 - account not found');
-    } else {
-        cloudOfMoney = act;
-        tam[2].balance -= cloudOfMoney;
-        tam[3].balance += cloudOfMoney;
-        console.log(tam[2], fan, tam[2].balance);
-        console.log(tam[3], tan, tam[3].balance)
+function transferAmount (acc: any[], fan: number, tan: number, act: number) {
+  let trs: number = 0;
+  let trs2: number = 0;
+  for(let i: number = 0; i < accounts.length; i++) {
+    
+    if(accounts[i].account_number != fan) {
+    trs++
     }
+    if(accounts[i].account_number != tan) {
+      trs2++
+      }
+  }
+if (trs == accounts.length || trs2 == accounts.length){
+  console.log('404 - account not found');
 }
-transferAmount(accounts, accounts[2].account_number, accounts[3].account_number, 500);
+for (let i: number = 0; i < acc.length; i++){
+  if (acc[i].account_number == fan) {
+    acc[i].balance -= act;
+  } else if (acc[i].account_number == tan) {
+    acc[i].balance += act;
+  }
+} 
+console.log(accounts);
+}
+transferAmount(accounts, 43546731, 23456311, 500.0);
 
-export = {
-  getNameAndBalance,
-  transferAmount,
-  //accounts
-};
+  export = {
+    getNameAndBalance,
+    transferAmount,
+    accounts
+  };

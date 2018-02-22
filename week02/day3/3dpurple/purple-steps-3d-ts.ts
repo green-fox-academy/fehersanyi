@@ -14,7 +14,7 @@ function drawThemGood(x: number, y: number, s:number) {
 let hor: number = 5;
 let ver: number = 5;
 let bdy: number = 5;
-for (let i: number = 0; i < 6; i++) {
+for (let i: number = 0; i < 5; i++) {
     hor += hor;
     ver += ver;
     bdy *= 2;
