@@ -34,6 +34,7 @@ for(let i: number = 0; i < 18; i++) {
 
 
     purpleLines(horStart, verStart, horEnd, verEnd);
+
 }
 
 // yold csikok
