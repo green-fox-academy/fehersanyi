@@ -10,11 +10,14 @@ console.log(substrlist('not', ['this', 'is', 'what', 'I\'m', 'searching', 'in'])
 //  should print: `-1`
 
 function substrlist (myString: string, myListOfStrings: string []) {
-      let letThereBeLight = [];
-      for(let i: number = 0; i < myListOfStrings.length; i++) {
-        if(myListOfStrings[i].indexOf(myString) !== -1) {
-           letThereBeLight.push(i);
-        }
+  let letThereBeLight = [];
+    for(let i: number = 0; i < myListOfStrings.length; i++) {
+      if(myListOfStrings[i].indexOf(myString) !== -1) {
+       letThereBeLight.push(i);
       }
-      return letThereBeLight;
+    }
+      if(letThereBeLight.length > 0) {
+        return letThereBeLight[0];
+      }
+      return -1;
     }
