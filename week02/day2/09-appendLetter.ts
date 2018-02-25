@@ -3,13 +3,9 @@
 // The parameter should be a list.
 let far: string[] = ['kuty', 'macsk', 'kacs', 'rók', 'halacsk'];
 function appendA (inPut){
-    let appended: string [] = []
-    for (let i = 0; i < inPut.length; i++) {
-        appended = appended.concat(inPut[i] + 'a');
-    }
-    return appended;
+    let shorted = far.map(far => far + 'a').join();
+console.log(shorted);
 }
-console.log(appendA(far));
-
+appendA(far);
 // The output should be: 'kutya', 'macska', 'kacsa', 'róka', 'halacska'
 export = appendA;

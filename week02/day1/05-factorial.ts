@@ -1,8 +1,8 @@
 'use strict'
-function factorio(input: number){
+function factorio(inPut: number){
     let value:number =1;
-   for ( let kramp: number = 0; kramp < input; kramp++){
-        value = value * (input - kramp)
+   for ( let i: number = 0; i < inPut; i++){
+        value = value * (inPut - i)
    }
    console.log(value);
 }
