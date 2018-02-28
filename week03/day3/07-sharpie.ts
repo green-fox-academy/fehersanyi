@@ -18,3 +18,5 @@ let ceruza = new Sharpie('red', 0.5);
 
 ceruza.use();
 console.log(ceruza.inkAmount);
+
+export {Sharpie};
