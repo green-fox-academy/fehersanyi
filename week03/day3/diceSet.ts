@@ -57,6 +57,3 @@ class DiceSet {
     }
   }
   myDice.getCurrent();
-
-
-
