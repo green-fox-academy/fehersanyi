@@ -14,17 +14,20 @@ function initializeDominoes(): Domino[] {
 }
 let dominoesInOrder: Domino [] = [];
 function orderer (inPut: Domino[]) {
-  for (let i: number = 0; i < inPut.length; i++) {
+  dominoesInOrder.push(inPut[0]);
+  for (let i: number = 0; i < inPut.length - 1; i++) {
+    let leftNumber = dominoesInOrder[i].values[1];
     for (let j: number = 0; j < inPut.length; j++) {
-      if (inPut[i].values[1] === inPut[j].values[0]) {
+      let rightNumber = inPut[j].values[0]
+      if (leftNumber === rightNumber) {
       
-      dominoesInOrder[i].values[j] = inPut.splice(i+1, 1, inPut[j]);
+      dominoesInOrder.push(inPut[j]);
       // inPut.push(dominoesInOrder[i]);
       }
     }
   }
-  console.log(dominoesInOrder);
-  return inPut;
+
+  return dominoesInOrder;
 }
 
 function print(dominoes: Domino[]) {
