@@ -4,12 +4,12 @@ const canvas = document.querySelector('.main-canvas') as sTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
 // bakground
-ctx.fillStyle = 'yellow';
-ctx.fillRect(0, 0, 600, 600);
+// ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+// ctx.fillRect(0, 0, 600, 600);
 
 // rect function
 function drawMe(x: number, y: number, s: number) {
-  
+  ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
     // top
     ctx.strokeRect(x + s, y, s, s);
 
