@@ -5,7 +5,7 @@ class Sharpie {
   width: number;
   inkAmount: number = 100;
 
-  constructor(color, width) {
+  constructor(color?, width?) {
     this.color = color;
     this.width = width;
   }
@@ -17,6 +17,6 @@ class Sharpie {
 let ceruza = new Sharpie('red', 0.5);
 
 ceruza.use();
-console.log(ceruza.inkAmount);
+//console.log(ceruza.inkAmount);
 
 export {Sharpie};

@@ -38,3 +38,5 @@ let ibm = new BlogPost (
   lorem.getInfo();
   waitButWhy.getInfo();
   ibm.getInfo();
+
+  export {BlogPost};
