@@ -17,9 +17,6 @@ function demCarpet(x: number, y: number, s: number) {
     demCarpet(x - (2 * s / 3), y + s / 3, s / 3);
     demCarpet( x + s + (s / 3), y + s / 3, s / 3);
     demCarpet(x - (2 * s / 3), y + s + (s / 3), s / 3);
-
   }
-
 }
-
 demCarpet(200, 200, 200)

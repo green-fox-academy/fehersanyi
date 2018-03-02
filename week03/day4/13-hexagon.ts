@@ -22,8 +22,5 @@ function drawDemHexagons(x: number, y: number, s: number) {
     drawDemHexagons(x, y + s * Math.sqrt(3) / 2, s / 2)
     drawDemHexagons(x + s * 0.75, y + s * Math.sqrt(3) / 4, s / 2)
   }
-
-
 }
-
   drawDemHexagons(150, 50, 300)
