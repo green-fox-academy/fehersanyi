@@ -15,19 +15,41 @@ class Carrier {
 	}
 
 	fill() {
-		this.motherShip.forEach(e => {
-			e.ammo += e.maxAmmo - e.ammo;
-			this.ammoStorage -= e.ammo;
-		})
-		
+		if(this.ammoStorage !> 0) { 
+			this.motherShip.forEach(e => {
+				e.ammo += e.maxAmmo - e.ammo;
+				this.ammoStorage -= e.ammo;
+			});
+		} else {
+			throw new Error('no ammo');
+		}
 	}
 
-	fight() {
+	fight(enemy: Carrier) {
+		this.motherShip.forEach(e => {
+			enemy.healthPoints -= e.fight();
+		});
 
+	}
+
+	getMaxDmg(): number {
+		let sum: number = 0;
+		this.motherShip.forEach(e => {sum += e.ammo * e.baseDamage})
+		return sum;
+	}
+
+	containedAircraft() {
+		let list = [];
+		this.motherShip.forEach(e => {list.push(e.getStatus() + '\r\n')});
+		return list;
 	}
 
 	getStatus() {
-
+		if (this.healthPoints > 0) {
+			return `HP: ${this.healthPoints}, Aircraft count: ${this.motherShip.length}, Ammo storage: ${this.ammoStorage} Total damage: ${this.getMaxDmg()}  \r\n Aircrafts: \r\n ${this.containedAircraft()}`
+		} else {
+			return 'It\'s dead, Jim :\('
+		}
 	}
 }
 
@@ -82,8 +104,17 @@ class F35 extends AirCraft {
 }
 
 let vessel1 = new Carrier(2000, 5000);
+let vessel2 = new Carrier(2000, 500);
 let plane1 = new F16();
+let plane2 = new F35();
 vessel1.addAircraft(plane1);
+vessel1.addAircraft(plane2);
 console.log(vessel1);
+ vessel1.fill();
+console.log(vessel1);
+console.log(vessel2);
+vessel1.fight(vessel2);
+console.log(vessel2);
 vessel1.fill();
-console.log(vessel1);
+console.log(vessel1.getStatus());
+console.log(vessel2.getStatus());
