@@ -1,5 +1,36 @@
 'use strict';
 
+class Carrier {
+	motherShip: AirCraft[] = [];
+	ammoStorage: number;
+	healthPoints: number;
+
+	constructor(ammo: number, health: number) {
+		this.ammoStorage = ammo;
+		this.healthPoints = health;
+	}
+
+	addAircraft(type: AirCraft) {
+		this.motherShip.push(type)
+	}
+
+	fill() {
+		this.motherShip.forEach(e => {
+			e.ammo += e.maxAmmo - e.ammo;
+			this.ammoStorage -= e.ammo;
+		})
+		
+	}
+
+	fight() {
+
+	}
+
+	getStatus() {
+
+	}
+}
+
 class AirCraft {
 	ammo: number = 0;
 	baseDamage: number;
@@ -33,7 +64,7 @@ class F16 extends AirCraft {
 		super();
 	}
 	getType() {
-		return 'F16'
+		return 'F16';
 	}
 }
 
@@ -45,25 +76,14 @@ class F35 extends AirCraft {
 	}
 
 	getType() {
-		return 'F35'
+		return 'F35';
 	}
 
 }
 
-let test = new F16();
-console.log(test.ammo);
-test.refill();
-console.log(test.ammo);
-console.log(test.fight());
-console.log(test.ammo);
-
-let test2 = new F35();
-console.log(test2.ammo);
-test2.refill();
-console.log(test2.ammo);
-console.log(test2.fight());
-console.log(test2.ammo);
-console.log(test2.getStatus());
-test2.refill();
-console.log(test2.getStatus());
-console.log(test.getType());
+let vessel1 = new Carrier(2000, 5000);
+let plane1 = new F16();
+vessel1.addAircraft(plane1);
+console.log(vessel1);
+vessel1.fill();
+console.log(vessel1);
