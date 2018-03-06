@@ -15,19 +15,43 @@ class Carrier {
 	}
 
 	fill() {
-		if(this.ammoStorage !> 0) { 
+		if(this.ammoStorage <= 0) {
+			throw new Error('no ammo');
+		}
+		let ammoNeeds: number = 0;
+		this.motherShip.forEach(e => {
+			ammoNeeds += e.maxAmmo - e.ammo;
+		});
+		if(ammoNeeds < this.ammoStorage) {
 			this.motherShip.forEach(e => {
 				e.ammo += e.maxAmmo - e.ammo;
 				this.ammoStorage -= e.ammo;
 			});
-		} else {
-			throw new Error('no ammo');
+		}
+		else {
+			while (this.ammoStorage > 0) {
+				this.motherShip.forEach(e => {
+					if(e.getType() === 'F35') {
+						if(this.ammoStorage < e.maxAmmo) {
+							e.ammo += this.ammoStorage
+							this.ammoStorage -= e.ammo;
+						}
+						else {
+							console.log('fuk u');
+							this.ammoStorage = 0;
+						}
+					}
+				})
+			}
 		}
 	}
 
 	fight(enemy: Carrier) {
 		this.motherShip.forEach(e => {
 			enemy.healthPoints -= e.fight();
+			if (enemy.healthPoints < 0) {
+				enemy.healthPoints =  0;
+			}
 		});
 
 	}
@@ -71,7 +95,7 @@ class AirCraft {
 		return this.ammo += this.maxAmmo - this.ammo;
 	}
 
-	getType() {}
+	getType():string {return '';}
 
 	getStatus() {
 		return `Type ${this.getType()}, Ammo:${this.ammo}, Base damage:${this.baseDamage}, All damage: ${this.ammo * this.baseDamage}`
@@ -85,7 +109,7 @@ class F16 extends AirCraft {
 	constructor() {
 		super();
 	}
-	getType() {
+	getType(): string {
 		return 'F16';
 	}
 }
@@ -97,24 +121,17 @@ class F35 extends AirCraft {
 		super();
 	}
 
-	getType() {
+	getType(): string {
 		return 'F35';
 	}
 
 }
 
-let vessel1 = new Carrier(2000, 5000);
+let vessel1 = new Carrier(16, 5000);
 let vessel2 = new Carrier(2000, 500);
 let plane1 = new F16();
 let plane2 = new F35();
 vessel1.addAircraft(plane1);
 vessel1.addAircraft(plane2);
-console.log(vessel1);
- vessel1.fill();
-console.log(vessel1);
-console.log(vessel2);
-vessel1.fight(vessel2);
-console.log(vessel2);
 vessel1.fill();
 console.log(vessel1.getStatus());
-console.log(vessel2.getStatus());
