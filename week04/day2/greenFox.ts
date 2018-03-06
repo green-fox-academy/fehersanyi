@@ -58,8 +58,8 @@ for (let i = 0; i < 4; i++) {
 }
 
 for (let person of people) {
-  person.introduce();
-  person.getGoal();
+  console.log(person.introduce());
+  console.log(person.getGoal());
 }
 
 let awesome = new Cohort('AWESOME');
