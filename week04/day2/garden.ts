@@ -1,15 +1,21 @@
 'use strict';
-
-class Garden {
-	garden: Garden[] = []
-	name: string
+class Plant {
+	name: string;
 	waterNeeds: number = 0;
+	needWater(){};
+	water(water: number) {}
+}
+class Garden {
+	garden: Plant[] = []
+	name: string
 	consturctor(name: string) {
 		this.name = name;
 	}
 
 	water(water: number) {
-		this.waterNeeds += water;
+		this.garden.forEach(e =>{
+			e.water(water / this.garden.length);
+		})
 	}
 
 	addFlower(flower: Flower) {
@@ -23,9 +29,20 @@ class Garden {
 	getGarden() {
 		return this.garden;
 	}
+	getWaterNeeds() {
+		this.garden.forEach(e => { 
+			if(e.needWater()) {
+			  console.log(`${e.name} needs water`);
+			}
+			else {
+			  console.log(`${e.name} doesen't need water`);
+			}
+		});
+	}
 }
 
-class Flower extends Garden {
+
+class Flower extends Plant {
 	name: string;
 	color: string;
 
@@ -34,9 +51,17 @@ class Flower extends Garden {
 		this.name = name;
 		this.color = color
 	}
+	
+	water(water: number) {
+			this.waterNeeds += water * 0.75;
+	}
+
+	needWater(): boolean {
+		return this.waterNeeds <= 5;
+	}
 }
 
-class Tree extends Garden {
+class Tree extends Plant {
 	name: string;
 	color: string;
 
@@ -45,17 +70,26 @@ class Tree extends Garden {
 		this.name = name;
 		this.color = color;
 	}
+	needWater(): boolean {
+		return this.waterNeeds <= 10;
+	}
+
+	water(water: number) {
+		this.waterNeeds += water * 0.4;
 }
-let Ysa = new Garden();
+
+}
+let garden = new Garden();
 let pipacs = new Flower('pipacs', 'yellow');
 let ibolya = new Flower('ibolya', 'blue');
 let orangetree = new Tree('orangetree', 'orange');
 let demtree = new Tree('purpletree',  'purple');
-Ysa.addFlower(pipacs);
-Ysa.addFlower(ibolya);
-Ysa.addTree(orangetree);
-Ysa.addTree(demtree);
-console.log(Ysa.getGarden());
-console.log(pipacs.waterNeeds);
-Ysa.water(10);
-console.log(pipacs.waterNeeds);
+garden.addFlower(pipacs);
+garden.addFlower(ibolya);
+garden.addTree(orangetree);
+garden.addTree(demtree);
+garden.getWaterNeeds();
+garden.water(40);
+garden.getWaterNeeds();
+garden.water(70);
+garden.getWaterNeeds();
