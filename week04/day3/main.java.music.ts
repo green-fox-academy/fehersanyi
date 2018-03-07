@@ -9,7 +9,7 @@ abstract class Instrument {
 abstract class StringedInstrument extends Instrument {
   numberOfStrings: number;
   sound() {
-    this.play()
+    
   }
 }
 
@@ -28,8 +28,10 @@ class ElectricGuitar extends StringedInstrument {
 
 class BassGuitar extends StringedInstrument {
   numberOfStrings = 4;
-  sound() {
-    return 'Duum-duum-duum';
+  play() {
+    this.sound(); {
+      return 'Duum, duum, duum';
+    }
   }
   constructor(strings?: number) {
     super()
@@ -39,8 +41,10 @@ class BassGuitar extends StringedInstrument {
 
 class Violin extends StringedInstrument {
   numberOfStrings = 4;
-  sound() {
-    return 'Screech';
+  play() {
+    this.sound(); {
+      return 'Screech';
+    }
   }
   constructor(strings?: number) {
     super()
