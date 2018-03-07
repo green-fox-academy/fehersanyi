@@ -12,4 +12,5 @@ class Domino implements Comparable {
   }
 }
 
-export {Domino};
+
+export { Domino };
