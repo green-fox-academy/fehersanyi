@@ -14,17 +14,3 @@ console.log(containsSeven(numbers));
 // The output should be: "Noooooo"
 // Do this again with a different solution using different list functions!
 export = containsSeven;
-
-/*function containsSeven(inPut: number[]) {
-    let myCry: string = 'Nooooooo';
-    inPut.forEach(function(item){
-        if (item == 7) {
-            myCry = 'yaaaaaaaay';
-        }
-    })
-    return myCry;
-    }
-console.log(containsSeven(numbers));
-// The output should be: "Noooooo"
-// Do this again with a different solution using different list functions!
-export = containsSeven;*/

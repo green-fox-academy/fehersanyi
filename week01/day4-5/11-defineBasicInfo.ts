@@ -1,6 +1,4 @@
 'use strict';
-// define basic info
-
 let myName: string = 'Sanyi';
 let myAge: number = 27;
 let myHeight: number = 1.8;

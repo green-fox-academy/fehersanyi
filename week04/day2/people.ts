@@ -17,7 +17,7 @@ export class Person {
 	}
 
   introduce () {
-    return 'Hi, I\'m "${name}", a "${age}" year old ${gender}.';
+	return `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender}.`;
 	}
 	
 	getGoal() {
