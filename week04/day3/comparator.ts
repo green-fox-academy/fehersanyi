@@ -25,3 +25,11 @@ things[2].complete();
 console.log(things.sort(function (a: Thing , b: Thing) : number {
   return a.compareTo(b);
 }));
+
+for (let domino of dominoes) {
+  console.log(domino.printAllFields());
+}
+
+for (let thing of things) {
+  console.log(thing.printAllFields());
+}
