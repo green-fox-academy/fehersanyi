@@ -4,8 +4,8 @@ class Animal {
   hunger: number = 50;
   thirst: number = 50;
 
-  constructor() {
-
+  constructor(hunger: number = 50) {
+    this.hunger = hunger;
   }
 
   eat() {
@@ -14,9 +14,10 @@ class Animal {
   drink() {
     this.thirst--;
   }
-  play() {
-    this.thirst++;
-    this.hunger++;
+  play(): string {
+    // this.thirst++;
+    // this.hunger++;
+    return 'yay'
   }
 }
 

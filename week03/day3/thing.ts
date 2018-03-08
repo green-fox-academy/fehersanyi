@@ -1,6 +1,6 @@
 import { Comparable } from '../../week04/day3/comparable'
-
-class Thing implements Comparable {
+import { Printable } from '../../week04/day3/printable'
+class Thing implements Comparable, Printable {
   private name: string;
   private completed: boolean;
 
@@ -26,6 +26,9 @@ class Thing implements Comparable {
 		: this.completed
 		? - 1
 		: 1;
+	}
+	printAllFields() {
+		return this.name;
 	}
 }
 
