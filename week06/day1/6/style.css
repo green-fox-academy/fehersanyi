@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  max-width: 1024px;
+  height: 100%;
+  background-color: grey;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  background-color: #b02aff;
+  max-width: 1024px;
+  height: 50px;
+}
+
+.nav {
+  background-color: #2aeaff;
+  height: 30px;
+}
+
+.lefts {
+  display: flex;
+  width: 60px;
+  align-items: center;
+}
+
+
+
+.main {
+  display: flex;
+}
+
+.content {
+  background-color: #ffd62a;
+  
+}
