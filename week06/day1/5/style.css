@@ -1,0 +1,53 @@
+.container {
+  margin: 0 auto;
+  width: 450px;
+}
+
+.header {
+  background-color: #2aeaff;
+  height: 100px;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  height: 500px;
+}
+
+.one {
+  min-width: 100px;
+  background-color: orange;
+}
+
+.two {
+  display: flex;
+  min-width: 200px;
+  background-color: #e90020;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.three {
+  min-width: 100px;
+  background-color: purple;
+}
+
+.footer {
+  background-color: #0000fe;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+}
+
+.blackbox {
+  position: relative;
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+}
