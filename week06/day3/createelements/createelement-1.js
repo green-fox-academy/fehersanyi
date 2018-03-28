@@ -15,3 +15,6 @@ doma.setAttribute('class', 'header');
 doma.textContent = 'I can add elements to the DOM!';
 container.appendChild(doma);
 
+let img = document.createElement('img');
+img.setAttribute('src', './llama.jpg');
+container.appendChild(img);
