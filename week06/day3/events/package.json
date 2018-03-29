@@ -1,0 +1,12 @@
+{
+  "name": "cscscscssc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "events-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint *.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
