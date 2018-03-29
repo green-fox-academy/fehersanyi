@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  width: 80%;
+  height: 70%;
+  background-color: purple;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewer {
+  width: 75%;
+  padding-top: 42.19%;
+  background-color: yellow;
+}
+
+.button1 {
+  width: 5%;
+  padding-top: 42.19%;
+  background-color: violet;
+}
+
+.button2 {
+  width: 5%;
+  padding-top: 42.19%;
+  background-color: violet;
+}
