@@ -33,6 +33,16 @@ btn1.addEventListener('click', () => {
   title.textContent = titles[counter];
 });
 
+btn2.addEventListener('click', () => {
+  counter++;
+  if (counter === pics.length) {
+    counter = 0;
+  }
+  viewer.style.backgroundImage = `url('${pics[counter].src}')`;
+  desc.textContent = descriptions[counter];
+  title.textContent = titles[counter];
+});
+
 body.addEventListener('keydown', (e) => {
   if (e.keyCode === 37) {
     if (counter === 0) {
@@ -43,16 +53,6 @@ body.addEventListener('keydown', (e) => {
     desc.textContent = descriptions[counter];
     title.textContent = titles[counter];
   }
-});
-
-btn2.addEventListener('click', () => {
-  counter++;
-  if (counter === pics.length) {
-    counter = 0;
-  }
-  viewer.style.backgroundImage = `url('${pics[counter].src}')`;
-  desc.textContent = descriptions[counter];
-  title.textContent = titles[counter];
 });
 
 body.addEventListener('keydown', (e) => {

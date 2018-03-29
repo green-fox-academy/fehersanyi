@@ -17,41 +17,6 @@
   margin-left: 2%;
   opacity: 1;
   cursor: pointer;
-}
-
-.pictures1 {
   height: 80%;
   flex: 1;
-  background-color: red;
-}
-
-.pictures2 {
-  height: 80%;
-  flex: 1;
-  background-color: blue;
-}
-
-.pictures3 {
-  height: 80%;
-  flex: 1;
-  background-color: green;
-}
-
-.pictures4 {
-  height: 80%;
-  flex: 1;
-  background-color: lime;
-}
-
-.pictures5 {
-  height: 80%;
-  flex: 1;
-  background-color: tomato;
-}
-
-.pictures6 {
-  height: 80%;
-  flex: 1;
-  margin-right: 2%;
-  background-color: purple;
 }
