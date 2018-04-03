@@ -106,7 +106,9 @@
    console.log(typeof numbers)
    console.log(what)
    if (what === "sum") {
-     res.json({ resoult: sum(req.body.numbers)})
+     res.json({
+       resoult: sum(req.body.numbers)
+     })
    } else if (what === 'multiply') {
      res.json(mult(numbers))
    } else if (what === 'double') {
@@ -118,8 +120,10 @@
    };
  });
 
-  let sum = (ns) => {
-   return ns.reduce((a,b) => {a + b});
+ let sum = (ns) => {
+   return ns.reduce((a, b) => {
+     a + b
+   });
  }
 
  let mult = (ns) => {
@@ -132,28 +136,47 @@
    return value;
  };
  let dou = (ns) => {
-  let value = [];
-  console.log(ns.length)
-  for (let i = 0; i < ns.length; i++) {
-    console.log(typeof ns[i]);
-    value[i].push(ns[i]);
-  }
-  return value;
+   let value = [];
+   console.log(ns.length)
+   for (let i = 0; i < ns.length; i++) {
+     console.log(typeof ns[i]);
+     value[i].push(ns[i]);
+   }
+   return value;
  };
 
  app.post('/sith', (req, res) => {
    let text = req.body.text;
-   if(text === undefined) {
-   res.json({
-      error: 'Feed me some text you have to, padawan young you are. Hmmm.'
-   })
-  } else {
-    res.json({
-      sith_text: yodaStyle(text)
-    })
-  }
+   if (text === undefined) {
+     res.json({
+       error: 'Feed me some text you have to, padawan young you are. Hmmm.'
+     })
+   } else {
+     res.json({
+       sith_text: yodaStyle(text)
+     })
+   }
  })
-let randomstuff = [' hmm', ' arrgh', ' err'];
+ let randomstuff = ['hmmmmmm', 'arrgh', 'err'];
  let yodaStyle = (text) => {
-   return text.concat(randomstuff[1])
+   let value = []
+   let sentences = text.concat(' ').split('. ')
+   for (let i = 0; i < sentences.length - 1; i++) {
+     let wiseWords = sentences[i].split(' ');
+     let j = 0;
+     while (wiseWords[j] !== undefined) {
+       let tempWords = '';
+       if (wiseWords[j + 1] !== undefined) {
+         tempWords = wiseWords[j];
+         wiseWords[j] = wiseWords[j + 1];
+         wiseWords[j + 1] = tempWords;
+       }
+       value.push(wiseWords[j]);
+       value.push(wiseWords[j + 1]);
+       j += 2;
+     }
+     value.push(randomstuff[Math.floor(Math.random() * 3)]);
+   }
+
+   return value.join(' ').toLowerCase();
  }
