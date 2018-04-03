@@ -100,25 +100,49 @@
  };
 
 
- app.post('/arrays/:operation', (req, res) => {
-  let what = req.params.operation;
-  let numbers = req.query.numbers
-  if(what === 'sum') {
-    res.json(sum(numbers))
-  }
-  else if(what === 'multiply') {}
-  else if(what === 'double') {}
-  else if(what === undefined) {
-    res.json({
-      error: 'Please provide what to do with the numbers!'
-    });
-  };
+ app.post('/arrays', (req, res) => {
+   let what = req.body.what;
+   let numbers = req.body.numbers;
+   console.log(typeof numbers)
+   console.log(what)
+   if (what === 'sum') {
+     res.json(sum(numbers))
+   } else if (what === 'multiply') {
+     res.json(mult(numbers))
+   } else if (what === 'double') {
+     res.json(dou(numbers))
+   } else if (what === undefined) {
+     res.json({
+       error: 'Please provide what to do with the numbers!'
+     });
+   };
  });
 
  let sum = (array) => {
    let value = 0;
-   for(let i = 0; i < array.lenght; i++) {
-    value += array[i];
+   console.log(array.lenght)
+   for (let i = 0; i < array.lenght; i++) {
+     console.log(typeof array[i]);
+     value += array[i];
    }
    return value;
  }
+
+ let mult = (array) => {
+   let value = 0;
+   console.log(array.lenght)
+   for (let i = 0; i < array.lenght; i++) {
+     console.log(typeof array[i]);
+     value = value * array[i];
+   }
+   return value;
+ };
+ let dou = (array) => {
+  let value = [];
+  console.log(array.lenght)
+  for (let i = 0; i < array.lenght; i++) {
+    console.log(typeof array[i]);
+    value[i].push(array[i]);
+  }
+  return value;
+ };
