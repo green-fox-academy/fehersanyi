@@ -105,8 +105,8 @@
    let numbers = req.body.numbers;
    console.log(typeof numbers)
    console.log(what)
-   if (what === 'sum') {
-     res.json(sum(numbers))
+   if (what === "sum") {
+     res.json({ resoult: sum(req.body.numbers)})
    } else if (what === 'multiply') {
      res.json(mult(numbers))
    } else if (what === 'double') {
@@ -118,31 +118,42 @@
    };
  });
 
- let sum = (array) => {
-   let value = 0;
-   console.log(array.lenght)
-   for (let i = 0; i < array.lenght; i++) {
-     console.log(typeof array[i]);
-     value += array[i];
-   }
-   return value;
+  let sum = (ns) => {
+   return ns.reduce((a,b) => {a + b});
  }
 
- let mult = (array) => {
-   let value = 0;
-   console.log(array.lenght)
-   for (let i = 0; i < array.lenght; i++) {
-     console.log(typeof array[i]);
-     value = value * array[i];
+ let mult = (ns) => {
+   let value = 1;
+   console.log(ns.length)
+   for (let i = 0; i < ns.length; i++) {
+     console.log(typeof ns[i]);
+     value = value * ns[`${i}`];
    }
    return value;
  };
- let dou = (array) => {
+ let dou = (ns) => {
   let value = [];
-  console.log(array.lenght)
-  for (let i = 0; i < array.lenght; i++) {
-    console.log(typeof array[i]);
-    value[i].push(array[i]);
+  console.log(ns.length)
+  for (let i = 0; i < ns.length; i++) {
+    console.log(typeof ns[i]);
+    value[i].push(ns[i]);
   }
   return value;
  };
+
+ app.post('/sith', (req, res) => {
+   let text = req.body.text;
+   if(text === undefined) {
+   res.json({
+      error: 'Feed me some text you have to, padawan young you are. Hmmm.'
+   })
+  } else {
+    res.json({
+      sith_text: yodaStyle(text)
+    })
+  }
+ })
+let randomstuff = [' hmm', ' arrgh', ' err'];
+ let yodaStyle = (text) => {
+   return text.concat(randomstuff[1])
+ }
