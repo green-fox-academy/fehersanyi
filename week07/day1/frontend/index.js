@@ -1,4 +1,4 @@
- const PORT = 3000;
+ const PORT = 8080;
  let express = require('express');
  let app = express();
  const path = require('path');
@@ -16,12 +16,27 @@
 
 
  app.get('/doubling', (req, res) => {
-  res.json({
-    kiskacsa: req.query.input,
-    result: doubling(req.query.input)
-  });
+    res.json({
+      recieved: req.query.input,
+      result: doubling(req.query.input)
+    });
  });
 
  let doubling = (i) => {
    return i * 2;
  };
+
+ app.get('/greet', (req, res) => {
+   const name = req.query.name;
+   const title = req.query.title;
+  if(name === undefined || title === undefined) {
+    res.status(404);
+    res.json({
+      error: 'Please provide a name and a title!'
+    });
+  } else {
+    res.json({
+      welcome_message: `Oh, hi there ${name}, my dear ${title}`
+    });
+  };
+});
