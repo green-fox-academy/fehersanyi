@@ -26,7 +26,12 @@ input {
 
 #signup {
   border: 0;
+  color: #fff;
   background-color: #16a085;
+  width: 50%;
+  height: 40px;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .container {
@@ -54,6 +59,8 @@ form p {
   flex: 1;
   align-items: center;
   justify-content: center;
+  height: 250px; 
+  margin-top: 55px;
 }
 
 .middle p {
@@ -71,6 +78,9 @@ form p {
   flex-direction: column; 
   flex: 4;
   justify-content: space-around;
+  align-items: center;
+  height: 250px; 
+  margin-top: 55px;
 }
 
 button {
@@ -80,6 +90,7 @@ button {
   border-radius: 4px;
   color: #fff;
   font-size: 14px;
+  cursor: pointer;
 }
 
 #fb {
