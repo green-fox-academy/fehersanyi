@@ -1,76 +1,44 @@
-const scifi = document.getElementById('scifi');
-const drama = document.querySelector('#drama');
-const comedy = document.getElementById('comedy');
-const genres = document.querySelector('.genre');
-const movies = document.querySelector('.movie');
-const selected = document.querySelector('span');
-const moon = document.getElementById('moon')
-const space = document.getElementById('space')
-const contact = document.getElementById('contact')
-const hour = document.getElementById('hour')
-const blood = document.getElementById('blood')
-const beauty = document.getElementById('beauty')
-const plane = document.getElementById('plane')
-const deadpool = document.getElementById('deadpool')
-const wayne = document.getElementById('wayne')
 
 const show = () => {
-  console.log(selected.textContent)
-  document.querySelectorAll('.Drama').forEach(e => {
-    e.classList.remove('visible');
-  });
-  document.querySelectorAll('.Sci-fi').forEach(e => {
-    e.classList.remove('visible');
-  });
-  document.querySelectorAll('.Comedy').forEach(e => {
-    e.classList.remove('visible');
-  });
-  if (drama.selected === true) {
-    document.querySelectorAll('.Drama').forEach(e => {
-      e.classList.add('Drama', 'visible');
-    });
-  };
-  if (scifi.selected === true) {
-    document.querySelectorAll('.Sci-fi').forEach(e => {
-      e.classList.add('Sci-fi', 'visible');
-    });
-  };
-  if (comedy.selected === true) {
-    document.querySelectorAll('.Comedy').forEach(e => {
-      e.classList.add('Comedy', 'visible');
-    });
-  };
+  remover('.Drama');
+  remover('.Sci-fi');
+  remover('.Comedy');
+  adder(document.querySelector('#drama'), document.querySelectorAll('.Drama'));
+  adder(document.getElementById('scifi'), document.querySelectorAll('.Sci-fi'));
+  adder(document.getElementById('comedy'), document.querySelectorAll('.Comedy'));
 };
 
 const writeIt = () => {
-  if (moon.selected) {
-    selected.textContent = `The selected movie is: ${moon.textContent}`
-  };
-  if (space.selected) {
-    selected.textContent = `The selected movie is: ${space.textContent}`
-  };
-  if (contact.selected) {
-    selected.textContent = `The selected movie is: ${contact.textContent}`
-  };
-  if (hour.selected) {
-    selected.textContent = `The selected movie is: ${hour.textContent}`
-  };
-  if (blood.selected) {
-    selected.textContent = `The selected movie is: ${blood.textContent}`
-  };
-  if (beauty.selected) {
-    selected.textContent = `The selected movie is: ${beauty.textContent}`
-  };
-  if (plane.selected) {
-    selected.textContent = `The selected movie is: ${plane.textContent}`
-  };
-  if (deadpool.selected) {
-    selected.textContent = `The selected movie is: ${deadpool.textContent}`
-  };
-  if (wayne.selected) {
-    selected.textContent = `The selected movie is: ${wayne.textContent}`
+  writer(document.getElementById('moon'));
+  writer(document.getElementById('space'));
+  writer(document.getElementById('contact'));
+  writer(document.getElementById('hour'));
+  writer(document.getElementById('blood'));
+  writer(document.getElementById('beauty'));
+  writer(document.getElementById('plane'));
+  writer(document.getElementById('deadpool'));
+  writer(document.getElementById('wayne'));
+};
+
+const writer = (e) => {
+  if (e.selected) {
+    document.querySelector('span').textContent = `The selected movie is: ${e.textContent}`
   };
 };
 
-genres.addEventListener('change', show);
-movies.addEventListener('change', writeIt);
+const remover = (g) => {
+  document.querySelectorAll(g).forEach(e => {
+    e.classList.remove('visible');
+  });
+};
+
+const adder = (a, b) => {
+  if (a.selected === true) {
+    b.forEach(e => {
+      e.classList.add('visible');
+    });
+  };
+};
+
+document.querySelector('.genre').addEventListener('change', show);
+document.querySelector('.movie').addEventListener('change', writeIt);
