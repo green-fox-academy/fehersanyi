@@ -172,9 +172,12 @@
          wiseWords[j + 1] = tempWords;
        }
        value.push(wiseWords[j]);
-       value.push(wiseWords[j + 1]);
+       if (wiseWords[j + 1] !== undefined) {
+         value.push(wiseWords[j + 1]);
+       }
        j += 2;
      }
+     value.push('.');
      value.push(randomstuff[Math.floor(Math.random() * 3)]);
    }
 
