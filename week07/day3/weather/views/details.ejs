@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,28 @@
   <title>Document</title>
   <link rel="stylesheet" href="/assets/details.css">
 </head>
-<body>
-    <div class="container">
-      <h2>
 
-      </h2>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <div></div>
-                <div></div>
-                <div></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<body>
+  <div class="container">
+    <h2 class="current">
+      <%= city.city %>
+    </h2>
+    <div class="innards">
+      <% city.weather.forEach(e => { %>
+        <div class="parts">
+          <div class="icon">
+            <img src="/assets/<%= e.icon %>.png" width="105px" >
+          </div>
+          <div class="temperature">
+            <%= e.temp %>°C
+          </div>
+          <div class="message">
+            <%= e.message %>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
 </body>
+
 </html>

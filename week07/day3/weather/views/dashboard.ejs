@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weather report</title>
   <link rel="stylesheet" href="/assets/dashboard.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 </head>
+
 <body>
   <div class="container">
-    <table>
-      <tbody>
+    <div class="innard">
+      <% cities.forEach((e, i) => { %>
+        <a href="/cities/<%= i %>">
+          <div class="city">
+            <div class="left">
+              <div class="cityName">
+                <%= e.city %>
+              </div>
+              <div class="stateName">
+                <%= e.location %>
+              </div>
+            </div>
+            <div class="right">
+              <div class="temperature">
+                <%= e.weather[0].temp %>°C</div>
+              <div class="icon">
+                <img src="/assets/<%= e.weather[0].icon %>.png" height="95px">
+              </div>
+            </div>
+          </div>
+        </a>
+        <% }); %>
 
-        <tr>
-
-          <td>
-            <div></div>
-            <div></div>
-          </td>
-          <td></td>
-          <td></td>
-
-        </tr>
-      </tbody>
-    </table>
+    </div>
   </div>
 </body>
+
 </html>

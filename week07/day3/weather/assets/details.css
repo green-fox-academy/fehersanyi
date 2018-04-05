@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #ecf0f1;
+}
+
+.container {
+  height: 30%;
+  min-height: 250px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.current {
+  align-self: flex-start;
+  /* margin: 5px; */
+}
+
+.innards {
+  display: flex;
+  height: 75%;
+  /* width: 20%; */
+  flex: 1;
+  justify-content: space-around;
+  
+}
+
+.parts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fff;
+  margin: 0 5px;
+}
+
+.icon {
+  height: 50%;
+}
+
+.temperature {
+  height: 25%;
+  align-self: center;
+  font-size: 16px;
+}
+
+.message {
+  height: 25%;
+  align-self: center;
+  font-size: 10px;
+}
