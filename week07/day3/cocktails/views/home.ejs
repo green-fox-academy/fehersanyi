@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cocktails</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Cocktails</h1>
+    <div class="alcList">
+      <ul>
+        <li><a href="/">ALL</a></li>
+        <% alcoholList.forEach(e => { %>
+          <li>
+           <a href="/?alcohol=<%= e %>"> <%= e.toUpperCase() %> </a>
+          </li>
+          <% }); %>
+      </ul>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th class="headerName">NAME</th>
+          <th class="headerPrice">PRICE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% cocktails.forEach(e => { %>
+          <tr>
+            <td>
+              <div class="name">
+                <span>
+                  <%= e.name %>
+                </span>
+                <% if(!e.isAlcoholic) { %>
+                  <span class="nons">
+                    (non-alcoholic)
+                  </span>
+                  <% }; %>
+              </div>
+              <div class="contains">
+                <%= e.contains.join(', ') %>
+              </div>
+            </td>
+            <td class="prices">
+              <%= e.price %> Ft
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
