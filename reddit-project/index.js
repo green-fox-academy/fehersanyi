@@ -8,6 +8,8 @@ app.use(express.json());
 
 app.post('/posts', postController.addRedditPost);
 app.get('/posts', postController.getRedditPost);
+app.put('/posts/:id/upvote', postController.upVotePost);
+app.put('/posts/:id/downvote', postController.downVotePost);
 
 
 app.listen(PORT, () => {
