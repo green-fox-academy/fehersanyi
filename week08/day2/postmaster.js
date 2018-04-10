@@ -12,7 +12,7 @@ function myAction( message ) {
 
 
 // Create a private box with a poBox identifier
-const myPrivateBox = postMaster('super_secret_box', myAction);
+const myPrivateBox = postMaster('false_alarm', myAction);
 
 myPrivateBox('super_secret_box', 'The eagle has landed!'); // logs the message
 myPrivateBox('false_alarm', 'The eagle has landed! Heeeeloooooo!'); // nothing is logged
