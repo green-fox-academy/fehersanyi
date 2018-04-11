@@ -7,9 +7,12 @@ request.onload = function () {
     let response = JSON.parse(request.responseText);
     response.response.docs.forEach((e, i) => {
       let a = document.createElement('a');
+      let p = document.createElement('p');
       a.innerText = response.response.docs[i].headline.main + `\n`;
+      p.innerText = response.response.docs[i].headline.snippet;
       a.href = response.response.docs[i].web_url;
       document.querySelector('body').appendChild(a);
+      document.querySelector('body').appendChild(p);
     });
   }
 }
