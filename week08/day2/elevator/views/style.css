@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  height: 400px;
+  width: 600px;
+  background-color: tomato;
+}
+
+.controllPanel {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 2px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: steelblue;
+}
+
+.directions {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 60%;
+  margin: 30px;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 60%;
+  margin: 30px;
+  justify-content: flex-end;
+}
+
+.elevatorShaft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.floor {
+  height: 30px;
+  background-color: #fff;
+  width: 60%;
+  border: 2px solid black;
+}
+
+.elevator {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}

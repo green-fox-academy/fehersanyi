@@ -12,9 +12,6 @@ let volvo = {
   }
 };
 
-// 2nd
-// Call the refuel function on the ferrari object using the bind method, with
-// 52 as a parameter
 let ferrari = {
   type: "Ferrari",
   fuel: 0,
@@ -29,15 +26,6 @@ let ferrari = {
 function refuel(liters) {
   this.fuel += liters
 }
-
-// 3rd
-// Create a tesla object that has 3 properties
-//  - type: string
-//  - battery: number
-//  - kms: number
-//  - consunption: number
-// And a method called ride, that takes a parameter celled km,
-// and increments kms with it, then drains the battery based on the consumpltion 
 
 let tesla = {
   type: 'Tesla',
@@ -55,7 +43,5 @@ console.log(tesla.kms);
 console.log(tesla.battery);
 volvo.ride(42);
 console.log(ferrari.fuel);
-let ferrariFueled = refuel.bind(ferrari);
-ferrariFueled(52);
-
+refuel.bind(ferrari)(52);
 console.log(ferrari.fuel);

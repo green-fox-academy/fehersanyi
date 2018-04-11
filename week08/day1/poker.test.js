@@ -49,3 +49,14 @@ test('black wins', t => {
   t.end();
 });
 
+
+'Black wins! - (Drill: K)'
+
+test('black wins', t => {
+  blackHand = ['2H', '2D', '2S', 'TC', 'KD'];
+  whiteHand = ['2C', '3H', '4S', '8C', '8S'];
+  expected =  'Black wins! - (Drill: 2)';
+  t.equal(poker(blackHand, whiteHand), expected);
+  t.end();
+});
+

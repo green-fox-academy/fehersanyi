@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Elevator</title>
+  <link rel="stylesheet" href="./views/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="controllPanel">
+      <div class="directions">
+        <button data-change="1">UP</button>
+        <button data-change="-1">DOWN</button>
+        </dir>
+      </div>
+      <div class="people">
+        <button class="adder">Add peaople</button>
+        <button class="remover">Remove peaople</button>
+        </dir>
+      </div>
+    </div>
+    <div class="elevatorShaft">
+      <div class="floor" data-floor="9"></div>
+      <div class="floor" data-floor="8"></div>
+      <div class="floor" data-floor="7"></div>
+      <div class="floor" data-floor="6"></div>
+      <div class="floor" data-floor="5"></div>
+      <div class="floor" data-floor="4"></div>
+      <div class="floor" data-floor="3"></div>
+      <div class="floor" data-floor="2"></div>
+      <div class="floor"data-floor="1"></div>
+      <div class="floor" data-floor="0">
+        <div class="elevator">0</div>
+      </div>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+
+</html>
