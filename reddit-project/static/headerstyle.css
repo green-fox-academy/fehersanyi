@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font: normal x-small verdana,arial,helvetica,sans-serif;
+	font-size: 9px;
+}
+
+.container {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	background-color: #cee3f8;
+	width: 100%;
+	height: 58px;
+	border-bottom: 1px solid#5f99cf;
+	padding: 1px;
+}
+
+.dropdown {
+	display: flex;
+	font-size: 1rem;
+	color: black;
+	margin-left: 2px;
+}
+
+.categories {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 2rem;
+	background-color: #f0f0f0;
+	line-height: 2rem;
+	font-size: 1rem;
+}
+
+ul {
+	display: flex;
+	list-style-type: none;
+}
+
+li {
+	margin-left: 1.5px;
+	margin-right: 1.5px;
+}
+
+.separator {
+	margin-left: 3px;
+	margin-right: 3px;
+	color: black;
+}
+
+.all {
+	color: #ff4500;
+	margin-left: 8px;
+}
+
+.mainHeader {
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.navLeft {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	width: 50%;
+}
+
+.logo {
+	bottom: 0;
+	height: 40px;
+	width: 120px;
+	background-image: url('./images/Reddit_Logo.png');
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	color: #6a6699;
+	height: 18px;
+	position: absolute;
+	top: 40px;
+	left: 120px;
+}
+
+.optstyle {
+	display: flex;
+	line-height: 2rem;
+}
+
+.opt {
+	background-color: #eff7ff;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 8px;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+}
+
+.optstyle :first-child {
+	margin-left: 15px;
+}
+
+.active {
+	color: #ff4500;
+	border: 1px solid #5f99cf;
+	border-bottom: 0;
+	background-color: #fff;
+}
+
+.navRight {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+.regForm {
+	height: 18px;
+	width: 260px;
+	align-self: flex-end;
+	background-color: #eff7ff;
+	border-radius: 4px;
+	line-height: 18px;
+	font-size: 1rem;
+}
+
+.lang {
+	padding-right: 5px;
+}
+
+span {
+	color: blue;
+}

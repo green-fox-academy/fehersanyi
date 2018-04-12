@@ -1,0 +1,70 @@
+.bottomPart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.login {
+    width: 300px;
+    height: 77px;
+    border: 1px solid grey;
+    margin-right: 5px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+}
+
+.usrinfo {
+    height: 13px;
+    width: 127px;
+    padding: 6px;
+    margin: 5px 0 0 5px;
+}
+
+.button {
+    display: flex;
+    height: 43px;
+    align-items: center;
+    margin: 5px;
+}
+
+#remember {
+    margin-right: 6px;
+}
+
+label {
+    margin-right: 6px;
+}
+
+.reset {
+    margin-right: 6px;
+}
+
+.btn {
+    margin-left:82px;
+    width: 44px;
+    height: 24px;
+}
+
+.create {
+    width: 300px;
+    height: 30px;
+    margin-top: 15px;
+    line-height: 29px;
+    font-size: 150%;
+    color: #369;
+    cursor: pointer;
+    text-align: center;
+    background-color: #cee3f8;
+    align-self: center;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.create:hover {
+    color: #fff;
+    background-color: darkslateblue;
+}
