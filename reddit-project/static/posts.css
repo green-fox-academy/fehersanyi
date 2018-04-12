@@ -11,6 +11,7 @@
 	padding-left: 3px;
 	font-size: 18px;
 	color: lightgray;
+	margin-top: 15px;
 }
 
 .postid {
@@ -36,6 +37,7 @@
 	background-image: url('/static/images/uparrow.png');
 	background-repeat: no-repeat;
 	background-position: center center;
+	cursor: pointer;
 }
 
 .downarrow {
@@ -43,6 +45,7 @@
 	background-image: url('/static/images/downarrow.png');
 	background-repeat: no-repeat;
 	background-position: center center;
+	cursor: pointer;
 }
 
 .postimage {
@@ -51,6 +54,7 @@
 
 .title {
 	color: blue;
+	cursor: pointer;
 }
 
 .littledetails {
@@ -66,4 +70,19 @@
 
 .postdetails {
 	font-size: 1rem;
+}
+
+.littlelinks {
+	color: grey;
+	line-height: 2rem;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.littlelinks a {
+	margin-right: 5px;
+}
+
+.posttitle {
+	color: blue;
 }

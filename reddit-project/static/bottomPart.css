@@ -41,6 +41,7 @@ label {
 
 .reset {
     margin-right: 6px;
+    cursor: pointer;
 }
 
 .btn {
