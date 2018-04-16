@@ -3,12 +3,11 @@
 require('es6-promise');
 
 let promise = new Promise((fulfill, reject) => {
-		setTimeout(() => reject(new Error('REJECTED!')), 300);
+		fulfill('I FIRED');
+		reject(new Error('I DID NOT FIRE'))
 	})
-	.then(null, onReject)
+	.then(console.log, onRejected);
 
-function onReject(error) {
+function onRejected(error) {
 	console.log(error.message)
 }
-
-promise
