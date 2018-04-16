@@ -2,18 +2,31 @@
 
 require('es6-promise');
 
-function attachTitle(arg) {
-	return `DR. ${arg}`;
-}
-
-let promise = new Promise((fulfill, reject) => {
-	fulfill('MANHATTAN');
-})
-promise
-.then(attachTitle)
-.then(console.log)
 
 
+
+// function parsePromised() {
+// 	let promise = new Promise((fulfill, reject) => {
+// 		try {
+// 			JSON.parse(process.argv[2])
+// 		}
+// 		catch (e) {
+// 			(console.log(e.message))
+// 		}
+// 	})
+// }
+// parsePromised();
+
+// function attachTitle(arg) {
+// 	return `DR. ${arg}`;
+// }
+
+// let promise = new Promise((fulfill, reject) => {
+// 	fulfill('MANHATTAN');
+// })
+// promise
+// .then(attachTitle)
+// .then(console.log)
 
 // first()
 //     .then(second)
