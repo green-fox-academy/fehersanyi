@@ -18,7 +18,6 @@ test('groot endpoint', (t) => {
 		});
 })
 
-
 test('groot endpoint', (t) => {
 	request(app)
 		.get('/groot?message=kakafej')
@@ -33,6 +32,7 @@ test('groot endpoint', (t) => {
 			t.end()
 		});
 })
+
 test('yondu endpoint', (t) => {
 	request(app)
 		.get('/yondu')
@@ -95,8 +95,7 @@ test('rocket endpoint', (t) => {
 		})
 })
 
-
-test('groot endpoint', (t) => {
+test('rocket fill endpoint', (t) => {
 	request(app)
 		.get('/rocket/fill?caliber=.50&amount=5000')
 		.expect(200)
@@ -112,7 +111,7 @@ test('groot endpoint', (t) => {
 		})
 })
 
-test('rocket endpoint', (t) => {
+test('rocket fill endpoint', (t) => {
 	request(app)
 		.get('/rocket/fill?caliber=fifty&amount=5000')
 		.expect(200)
@@ -128,31 +127,134 @@ test('rocket endpoint', (t) => {
 
 test('drax is here', (t) => {
 	request(app)
-	.get('/drax')
-	.expect(200)
-	.expect('Content-Type', /json/)
-	.expect([{
-		'name': 'lasagna',
-		'amount': 1,
-		'calorie': 40
-	},
-	{
-		'name': 'panini',
-		'amount': 6,
-		'calorie': 68
-	},
-	{
-		'name': 'babgulyas',
-		'amount': 3,
-		'calorie': 60
-	},
-	{
-		'name': 'csirkemell',
-		'amount': 4,
-		'calorie': 8	
-	}])
-	.end((err, res) => {
-		t.error(err)
-		t.end();
-	})
+		.get('/drax')
+		.expect(200)
+		.expect('Content-Type', /json/)
+		.expect([{
+				'name': 'lasagna',
+				'amount': 1,
+				'calorie': 40
+			},
+			{
+				'name': 'panini',
+				'amount': 6,
+				'calorie': 68
+			},
+			{
+				'name': 'babgulyas',
+				'amount': 3,
+				'calorie': 60
+			},
+			{
+				'name': 'csirkemell',
+				'amount': 4,
+				'calorie': 8
+			}
+		])
+		.end((err, res) => {
+			t.error(err)
+			t.end();
+		})
+})
+
+test('drax got moreeeee', (t) => {
+	request(app)
+		.get('/drax/add?name=chocholate&amount=6&calorie=250')
+		.expect(200)
+		.expect('Content-Type', /json/)
+		.expect([{
+				'name': 'lasagna',
+				'amount': 1,
+				'calorie': 40
+			},
+			{
+				'name': 'panini',
+				'amount': 6,
+				'calorie': 68
+			},
+			{
+				'name': 'babgulyas',
+				'amount': 3,
+				'calorie': 60
+			},
+			{
+				'name': 'csirkemell',
+				'amount': 4,
+				'calorie': 8
+			},
+			{
+				'name': 'chocholate',
+				'amount': 6,
+				'calorie': 250
+			}
+		])
+		.end((err, res) => {
+			t.error(err)
+			t.end();
+		})
+})
+
+test('what happened to my foods?', (t) => {
+	request(app)
+		.get('/drax/change?name=lasagna&amount=11')
+		.expect([{
+				'name': 'lasagna',
+				'amount': 12,
+				'calorie': 40
+			},
+			{
+				'name': 'panini',
+				'amount': 6,
+				'calorie': 68
+			},
+			{
+				'name': 'babgulyas',
+				'amount': 3,
+				'calorie': 60
+			},
+			{
+				'name': 'csirkemell',
+				'amount': 4,
+				'calorie': 8
+			},
+			{
+				'name': 'chocholate',
+				'amount': 6,
+				'calorie': 250
+			}
+		])
+		.end((err, res) => {
+			t.error(err)
+			t.end();
+		})
+})
+
+test('drax ate something', (t) => {
+	request(app)
+		.get('/drax/remove?name=lasagna')
+		.expect([{
+				'name': 'panini',
+				'amount': 6,
+				'calorie': 68
+			},
+			{
+				'name': 'babgulyas',
+				'amount': 3,
+				'calorie': 60
+			},
+			{
+				'name': 'csirkemell',
+				'amount': 4,
+				'calorie': 8
+			},
+			{
+				'name': 'chocholate',
+				'amount': 6,
+				'calorie': 250
+			}
+		])
+		.end((err, res) => {
+			t.error(err)
+			t.end();
+		})
 })
