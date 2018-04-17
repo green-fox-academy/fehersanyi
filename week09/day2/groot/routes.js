@@ -113,7 +113,7 @@ let food = [{
 	{
 		name: 'csirkemell',
 		amount: 4,
-		calorie: 8	
+		calorie: 8
 	}
 ];
 
@@ -143,26 +143,45 @@ app.get('/drax/remove', (req, res) => {
 })
 
 app.get('/drax/change', (req, res) => {
+	let foundedItem = false;
 	food.forEach(e => {
 		if (req.query.name === e.name) {
 			e.amount += parseInt(req.query.amount);
-			res.json(food)
-		} else {
-			res.json({
-				"error": "no such food"
-			})
+			foundedItem = true;
 		}
 	})
-
+	if (foundedItem) {
+		res.json(food)
+	} else {
+		res.json({
+			"error": "no such food"
+		})
+	}
 })
 
 
-let playList = [
-	{
-		author: 
-	}
-]
+let playList = [{
+	author: "Periphery",
+	title: "Alpha",
+	genre: "metal",
+	year: 2015,
+	rating: 10
+}]
 
-app.get('/awesome', (req, res) => {})
+app.get('/awesome', (req, res) => {
+	res.json(playList)
+})
+
+app.get('/awesome/add', (req, res) => {
+	let newSong = {
+		author: req.query.author,
+		title: req.query.title,
+		genre: req.query.genre,
+		year: req.query.year,
+		rating: req.query.rating
+	}
+	playList.push(newSong);
+	res.json(playList)
+})
 
 module.exports = app;

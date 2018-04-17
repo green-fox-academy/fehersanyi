@@ -197,6 +197,8 @@ test('drax got moreeeee', (t) => {
 test('what happened to my foods?', (t) => {
 	request(app)
 		.get('/drax/change?name=lasagna&amount=11')
+		.expect(200)
+		.expect('Content-Type', /json/)
 		.expect([{
 				'name': 'lasagna',
 				'amount': 12,
@@ -257,4 +259,49 @@ test('drax ate something', (t) => {
 			t.error(err)
 			t.end();
 		})
+})
+
+test('awesome mix vol. 1', (t) => {
+	request(app)
+	.get('/awesome')
+	.expect(200)
+	.expect([
+		{
+			author: "Periphery",
+			title: "Alpha",
+			genre: "metal",
+			year: 2015,
+			rating: 10
+		}
+	])
+	.end((err, res) => {
+		t.error(err)
+		t.end();
+	})
+})
+
+test('awesome mix vol. 2', (t) => {
+	request(app)
+	.get('/awesome/add?author=Periphery&title=Omega&genre=metal&year=2015&rating=10')
+	.expect(200)
+	.expect([
+		{
+			author: "Periphery",
+			title: "Alpha",
+			genre: "metal",
+			year: 2015,
+			rating: 10
+		},
+		{
+			author: "Periphery",
+			title: "Omega",
+			genre: "metal",
+			year: 2015,
+			rating: 10
+		}
+	])
+	.end((err, res) => {
+		t.error(err)
+		t.end();
+	})
 })
