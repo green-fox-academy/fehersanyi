@@ -14,17 +14,7 @@ class quizSql {
   };
 
   getQuestions(callback) {
-    this.connection.query('SELECT * FROM questions', (err, res) => {
-      if (err !== null) {
-        return callback(err);
-      } else {
-        return callback(null, res);
-      }
-    });
-  };
-
-  getAnswers(callback) {
-    this.connection.query('SELECT * FROM answers', (err, res) => {
+    this.connection.query('SELECT * FROM questions, answers WHERE questions.id = answers.question_id; ', (err, res) => {
       if (err !== null) {
         return callback(err);
       } else {
@@ -37,15 +27,33 @@ class quizSql {
     const addStatement = {
       query: 'INSERT INTO questions (question) VALUES (?)',
       value: questionQuery
-    }
-  }
+    };
+
+    this.connection.query(addStatement.query, addStatement.values, (err, res, fields) =>{
+      if(err !== null) {
+        return callback(err);
+      } else {
+        return callback(null, res);
+      }
+    });
+  };
 
   addAnswers(newAnswers, callback) {
     const addStatement = {
       query: 'INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, ?)',
       value: [questionId, answer, isCorrect]
     }
-  }
+
+    this.connection.query(addStatement.query, addStatement.values, (err, res, fields) =>{
+      if(err !== null) {
+        return callback(err);
+      } else {
+        return callback(null, res);
+      }
+    });
+  };
 
 
-}
+};
+
+module.exports = new quizSql();
