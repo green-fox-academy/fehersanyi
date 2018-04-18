@@ -1,14 +1,14 @@
 let request = new XMLHttpRequest();
+let postRequest = new XMLHttpRequest();
+let deleteRequest = new XMLHttpRequest();
 
 let posts = document.querySelector('.posts');
 
 request.open('GET', '/posts', true);
 request.onload = function () {
 	let dataBase = (JSON.parse(request.response));
-	console.log(dataBase);
 
 	dataBase.forEach(e => {
-		console.log(e);
 		let post = document.createElement('div');
 		post.className = 'post';
 
@@ -39,7 +39,8 @@ request.onload = function () {
 		let postInnards = document.createElement('div');
 		postInnards.className = 'postinnards';
 
-		let title = document.createElement('p');
+		let title = document.createElement('a');
+		title.setAttribute('href', e.url) ;
 		title.className = 'posttitle';
 		title.innerText = e.post_title;
 
@@ -92,7 +93,59 @@ request.onload = function () {
 		post.appendChild(postInnards);
 
 		posts.appendChild(post);
-	});
 
+		upArrow.addEventListener('click', () => {
+			request.open('PUT', `/posts/${e.post_id}/upvote`, true);
+			request.onreadystatechange = function () {
+				if (request.readyState === 4) {
+					likes.innerText = e.likes++;
+				}
+			}
+			request.send();
+		});
+
+		downArrow.addEventListener('click', () => {
+			request.open('PUT', `/posts/${e.post_id}/downvote`, true);
+			request.onreadystatechange = function () {
+				if (request.readyState === 4) {
+					likes.innerText = e.likes--;
+				}
+			}
+			request.send();
+		})
+
+		
+		
+		
+		
+	})
 };
 request.send();
+
+let linkCreator = document.querySelector('.link');
+let shadow = document.querySelector('.shadow');
+linkCreator.addEventListener('click', () => {
+	shadow.classList = ('shadow visible')
+});
+
+let activeUser = document.querySelector('.activeuser');
+let activeTitle = document.querySelector('.activetitle');
+let activeUrl = document.querySelector('.activeurl');
+let submitButton = document.querySelector('.activesubmit');
+
+submitButton.addEventListener('click', () => {
+	postRequest.open('POST', '/posts', true);
+	postRequest.onreadystatechange = function () {
+		if (request.readyState === 4) {
+			shadow.className = ('shadow');
+		}
+	}
+	postRequest.setRequestHeader('Content-Type', 'application/json');
+	postRequest.send(
+		JSON.stringify({
+			title: activeTitle.value,
+			url: activeUrl.value,
+			author: activeUser.value,
+		})
+	);
+});

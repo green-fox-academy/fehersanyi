@@ -8,7 +8,8 @@ body {
 	height: 100%;
 	width: 100%;
 	font: normal x-small verdana,arial,helvetica,sans-serif;
-	font-size: 9px;
+	font-size: 10px;
+	font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -56,14 +57,14 @@ li {
 }
 
 .separator {
-	margin-left: 3px;
-	margin-right: 3px;
+	margin-left: 2px;
+	margin-right: 2px;
 	color: black;
 }
 
 .all {
 	color: #ff4500;
-	margin-left: 8px;
+	margin-left: 6px;
 }
 
 .mainHeader {

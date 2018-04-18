@@ -40,12 +40,24 @@
 	cursor: pointer;
 }
 
+.uparrow:active {
+	background-image: url('/static/images/upactive.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 .downarrow {
 	height: 22px;
 	background-image: url('/static/images/downarrow.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	cursor: pointer;
+}
+
+.downarrow:active {
+	background-image: url('/static/images/downactive.png');
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .postimage {
@@ -85,4 +97,5 @@
 
 .posttitle {
 	color: blue;
+	cursor: pointer;
 }

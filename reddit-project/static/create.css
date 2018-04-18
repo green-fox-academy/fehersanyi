@@ -1,0 +1,74 @@
+.shadow {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	justify-content: center;
+	align-items: center;
+}
+
+.poster {
+	display: flex;
+	flex-direction: row;
+	width: 45%;
+	height: 40%;
+	border: 3px solid #5f99cf;
+	border-radius: 4px;
+}
+
+.postinputs {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 50%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.littleman {
+	height: 100%;
+	width: 50%;
+	background-image: url('./images/postlogo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.activeuser {
+	width: 80%;
+	height: 15%;
+	line-height: 32px;
+	font-size: 30px;
+	border-radius: 6px;
+}
+
+.activetitle {
+	width: 80%;
+	height: 15%;
+	line-height: 32px;
+	font-size: 30px;
+	border-radius: 6px;
+}
+
+.activeurl {
+	width: 80%;
+	height: 15%;
+	line-height: 32px;
+	font-size: 30px;
+	border-radius: 6px;
+}
+
+.activesubmit {
+	width: 80%;
+	height: 15%;
+	line-height: 32px;
+	font-size: 30px;
+	border-radius: 6px;
+}
+
+.visible {
+	display: flex;
+}

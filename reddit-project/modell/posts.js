@@ -15,8 +15,8 @@ class redditPost {
 
   addRedditPost(postData, callback) {
     const insertStatement = {
-      query: 'INSERT INTO posts (post_title, post_author, date_of_post) VALUES (?, ?, ?)',
-      values: [postData.title, postData.author, postData.date]
+      query: 'INSERT INTO posts (post_title, url, post_author, likes) VALUES (?, ?, ?, 0)',
+      values: [postData.title, postData.url, postData.author]
     };
 
     this.connection.query(insertStatement.query, insertStatement.values, (error, result, fields) => {
@@ -36,6 +36,8 @@ class redditPost {
       }
     });
   };
+
+  
 
   upVotePost(voteData, callback) {
     this.connection.query('SELECT likes FROM posts WHERE post_id = ?', [voteData.id], (error, result) => {

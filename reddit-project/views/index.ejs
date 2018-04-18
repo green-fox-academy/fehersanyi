@@ -3,11 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
+	<link rel="icon" sizes="60x60" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-60x60.png">
 	<title>reddit: the front page of internet</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/static/headerstyle.css">
 	<link rel="stylesheet" type="text/css" href="/static/topPart.css">
 	<link rel="stylesheet" type="text/css" href="/static/bottomPart.css">
 	<link rel="stylesheet" type="text/css" href="/static/posts.css">
+	<link rel="stylesheet" type="text/css" href="/static/create.css">
 </head>
 
 <body>
@@ -121,10 +124,22 @@
 						<input class="btn" type="submit" value="login">
 					</div>
 				</form>
-				<div class="create">Submit a new link</div>
-				<div class="create">Submit a new text post</div>
+				<div class="create link">Submit a new link</div>
+				<div class="create text">Submit a new text post</div>
 			</div>
 		</div>
+		</div>
+
+		<div class="shadow">
+			<div class="poster">
+				<div class="postinputs">
+					<input class="activetitle" type="text" placeholder="post title">
+					<input class="activeurl" type="text" placeholder="url">
+					<input class="activeuser" type="text" placeholder="user name">
+					<input class="activesubmit" type="submit" value="POST IT">
+				</div>
+				<div class="littleman"></div>
+			</div>
 		</div>
 		<script src="/static/index.js"></script>
 </body>
