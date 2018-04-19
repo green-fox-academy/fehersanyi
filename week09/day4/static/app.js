@@ -9,7 +9,7 @@ let score = 0;
 let rounds = 0;
 
 function writeQuestionOut(index) {
-  fetch('/questions')
+  fetch('/api/questions')
     .then((res) => res.json())
     .then((question) => {
       scoreTable.innerText = `SCORE: ${score}`
@@ -37,7 +37,7 @@ four.addEventListener('click', () => {
 });
 
 function fetchMyAnswer(button, index) {
-  fetch('/questions')
+  fetch('/api/questions')
     .then((res) => res.json())
     .then((question) => {
       if (question[rounds] !== undefined && question[rounds].is_correct !== undefined) {

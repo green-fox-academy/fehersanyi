@@ -1,7 +1,8 @@
-let mysql = require('mysql');
+require('dotenv').config();
 
+let mysql = require('mysql');
 const connectionDetails = {
-  host: 'localhost',
+  host: 3000,
   user: 'root',
   password: 'snes',
   database: 'quiz'

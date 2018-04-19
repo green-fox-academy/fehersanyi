@@ -14,7 +14,7 @@ module.exports = {
       if (err !== null) {
         res.sendStatus(500);
       } else {
-        res.setHeader('Location', '/questions/');
+        res.setHeader('Location', '/api/questions/');
         res.sendStatus(201);
       }
     });
@@ -23,7 +23,7 @@ module.exports = {
       if (err !== null) {
         res.sendStatus(500);
       } else {
-        res.setHeader('Location', '/answers/');
+        res.setHeader('Location', '/api/answers/');
         res.sendStatus(201);
       }
     })

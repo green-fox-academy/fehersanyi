@@ -8,7 +8,12 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/questions', controll.getQuestions);
+app.get('./manager', (req, res) => {
+  res.sendFile(__dirname + './views/manager.html')
+})
+
+
+app.get('/api/questions', controll.getQuestions);
 
 
 
