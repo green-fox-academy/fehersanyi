@@ -96,3 +96,4 @@ function seeYourScores() {
     container.appendChild(message);
   }
 }
+

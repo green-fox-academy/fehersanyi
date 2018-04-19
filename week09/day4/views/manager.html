@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
-  <title>Page Title</title>
+  <title>Manage questions</title>
   <link rel="stylesheet" type="text/css" href="../static/style-manager.css" />
 </head>
+
 <body>
   <div class="container">
-    <h2 class="title"></h2>
+    <h2 class="title">Manage questions</h2>
     <div class="deleter"></div>
-    <h2 class="title"></h2>
+    <h2 class="title">Create a new question</h2>
     <form class="adder">
-      <input type="text" placeholder="Type your question here" required>
+      <input class="qstn" type="text" placeholder="Type your question here" required>
       <h3>Answers</h3>
-      <p>#1</p><input type="text" required placeholder="Type zour answers here">
-      <input type="checkbox" name="ans">
-      <p>#2</p><input type="text" required placeholder="Type zour answers here">
-      <input type="checkbox" name="ans">
-      <p>#3</p><input type="text" required placeholder="Type zour answers here">
-      <input type="checkbox" name="ans">
-      <p>#4</p><input type="text" required placeholder="Type zour answers here">
-      <input type="checkbox" name="ans">
+      <div class="answer one">
+        <span>#1</span>
+        <input class="text" type="text" required placeholder="Type your answers here">
+        <input class="cb" type="radio" name="ans">
+      </div>
+      <div class="answer two">
+        <span>#2</span>
+        <input class="text" type="text" required placeholder="Type your answers here">
+        <input class="cb"  type="radio" name="ans">
+      </div>
+      <div class="answer three">
+        <span>#3</span>
+        <input class="text" type="text" required placeholder="Type your answers here">
+        <input class="cb"  type="radio" name="ans">
+      </div>
+      <div class="answer four">
+        <span>#4</span>
+        <input class="text" type="text" required placeholder="Type your answers here">
+        <input class="cb"  type="radio" name="ans">
+      </div>
     </form>
+    <a href="/">Go back to the game</a>
   </div>
-  <!-- <script src="main.js"></script> -->
+  <script src="../static/manager.js"></script>
 </body>
+
 </html>

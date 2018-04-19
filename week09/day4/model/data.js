@@ -1,11 +1,11 @@
 require('dotenv').config();
-
 let mysql = require('mysql');
+
 const connectionDetails = {
-  host: 3000,
-  user: 'root',
-  password: 'snes',
-  database: 'quiz'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 };
 
 class quizSql {
